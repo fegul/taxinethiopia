@@ -1,14 +1,22 @@
-body {
+section {
 	color: #fff;
-}
-
-#header-map i {
-	font-size: 10em;
-	color: #F5A503;
 }
 
 section {
 	padding: 30px 0;
+}
+
+section#header {
+	padding: 30px 0;
+	color: #fff;
+}
+
+section#header h3, section#header h1 {
+	margin-top: 0;
+}
+
+section#header h3 {
+	opacity: 0.7;
 }
 
 section h2 {
@@ -16,14 +24,15 @@ section h2 {
 	font-weight: bold;
 }
 
-small {
+p.invert-color small {
+	color: rgba(0,0,0,0.5);
+}
+
+p small {
 	color: rgba(255,255,255,0.5);
 }
 
 span.emphasis {
-	/*background: rgba(0,0,0,0.5);
-	padding: 5px 8px;
-	border-radius: 3px;*/
 	font-weight: bold;
 	font-size: 1.1em;
 }
@@ -48,12 +57,8 @@ span.emphasis {
 	color: #12659B;
 }
 
-#commonHSCodes ol {
-
-}
-
 #popularOriginCountries {
-	min-height: 35em;
+	height: 35em;
 	color: #666;
 }
 
@@ -73,8 +78,8 @@ i {
 	background: #3B424C;
 }
 
-#footer .container {
-	
+#footer h4 {
+	margin-top: 0;
 }
 
 #footer p, #footer h1, #footer h2, #footer h3, #footer h4 {
