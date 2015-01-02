@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tax in Ethiopia</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="header" class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <h1>Visualising Tax in Ethiopia</h1>
+            <h3>A quick look at some of the highlights surrounding taxation of Ethiopia's imports.</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="num-imported-items">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Ethiopia's imports rose by <span class="emphasis">668%</span> in 17 years</h2>
+            <p>In 1997, Ethiopia was importing just over <strong>20,000</strong> shipments** per year. By 2013 that number ballooned to over <strong>160,000</strong> shipments, indicating a growth of <strong>668%</strong> between 1997 and 2013.</p>
+          </div>
+          <div class="col-md-8">
+            <div><canvas id="import-growth" width="400" height="235"></canvas></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="commonHSCodes">
+      <div class="container">
+        <div class="row">
+          <h2 class="col-md-12">The Top 5 Most Frequently Imported Items of 2013 (<a id="HSExplain" href="#" data-toggle="popover" data-trigger="focus" title="Harmonized System Code" data-content="The Harmonized Commodity Description and Coding System, also known as the Harmonized System (HS) of tariff nomenclature is an internationally standardized system of names and numbers to classify traded products.">by HS Code</a>)</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <ol>
+              <li>Gaskets, washers and other seals, of vulcanized rubber (40169300)</li>
+              <li>Screws and bolts of iron or steel, nes (73181500)</li>
+              <li>Parts and accessories, nes, for vehicles of 87.01 to 87.05 (87089900)</li>
+              <li>--- OTHER ARTICLS OF PLASTICS, NES (39269090)</li>
+              <li>Other appliances such as taps, cocks and other valves, nes (84818000)</li>
+            </ul>
+          </div>
+          <div class="col-md-8">
+            <div><canvas id="popularHSCodes" width="400" height="165"></canvas></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
+
+       <section id="overlay-text">
+       <div class="container">
+        <div class="row">
+        <div class="col-md-8">
+        <h2>Where did 2013's imports come from?</h2>
+        <p>China was the #1 origin of all imports with <span class="emphasis">43,975</span> imports in all (representing <strong>27.5%</strong> of all imports in Ethiopia) In comparison, the #2 origin country (Italy) was the source of only <span class="emphasis">13,152</span> imports (<strong>8.22%</strong> of all imports in 2013)</p> <p>In fact, the number of imports from China alone amount to almost all of the next 4 countries combined (Italy, India, USA, and Germany)</p>
+        <!--<p>Hover over each country to see how many imports came from each country</p>
+        <i>* Numbers do not reflect the quantity in each import</i>-->
+        </div>
+        <div class="col-md-4">
+          <div><canvas id="originPieChart"></canvas></div>
+        </div>
+        </div>
+        </div>
+      </section>
+
+    <section id="popularOriginCountries"></section>
+
+    <section id="topofthetop">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h4>Most expensive import in 2013:</h4>
+          <h1>$170,894,428.94</h1>
+          <h4><i>"Other petroleum oils and oils obtained from bitumen"</i></h4>
+        </div>
+        <div class="col-md-3 col-md-offset-1">
+          <h4>Largest tax paid in 2013:</h4>
+          <h1>$12,772,071.59</h1>
+          <h4><i>274 vehicles imported from Thailand (between 1800 and 3000cc)</i></h4>
+        </div>
+        <div class="col-md-4 col-md-offset-1">
+          <h4>Largest tax (percentage) in 2013:</h4>
+          <h1>244%</h1>
+          <h4><i>Diesel vehicles (2500+cc) &amp; Petrol vehicles (3000+cc)</i></h4>
+        </div>
+      </div>
+      <p><small>Figures do not include items imported tax-free.</small></p>
+    </div>
+    </section>
+
+    <section id="totalavgtax">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>The average percentage of tax paid on imports in <strong>2013</strong> was <span class="emphasis">53.2%</span></h2>
+            <p>See how the average tax rate has changed since 2007 (the earliest year that tax paid data was made available)</p>
+            <p><small>Figures do not include items imported tax-free.</small></p>
+          </div>
+          <div class="col-md-8">
+            <div><canvas id="avgtax-growth" width="400" height="235"></canvas></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10">
+            <!--<h4>All data compiled from <a href="http://www.erca.gov.et/index.php/import-export-information" target="_blank">ERCA</a></h4>-->
+            <p>** "Shipments" refers to individual line items of imported goods provided by ERCA. Quantities in each shipment are not reflected in these figures.</p>
+            <p><small>Disclaimer: All data contained here has been obtained from <a href="http://www.erca.gov.et/index.php/import-export-information" target="_blank">publically-available sources</a> as of December 31, 2014. Its accuracy and validity has not been confirmed by indpendent parties and may be susceptible to errors. Please note that the purpose of this site is purely informational and its creation is not motivated by any personal or political agendas, merely a desire to make data more accessible to others.</small></p>
+          </div>
+          <div class="col-md-2">
+              <a class="twitter-follow-button"
+                href="https://twitter.com/fegul"
+                data-show-count="true"
+                data-lang="en">
+              Follow @fegul
+              </a>
+              <script type="text/javascript">
+              window.twttr = (function (d, s, id) {
+                var t, js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src= "https://platform.twitter.com/widgets.js";
+                fjs.parentNode.insertBefore(js, fjs);
+                return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
+              }(document, "script", "twitter-wjs"));
+              </script>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/data.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:900' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript">
+      $(function () {
+        $('[data-toggle="popover"]').popover()
+        $('a#HSExplain').on('click', function(e) {e.preventDefault(); return true;});
+
+        L.mapbox.accessToken = 'pk.eyJ1IjoiYXJpZm1vYmlsZSIsImEiOiJsOHhPY2tnIn0.FtFl0IIzyIZYbvMc8m9zSg';
+
+        var map = L.mapbox.map('popularOriginCountries', 'arifmobile.bb188e38');
+        map.scrollWheelZoom.disable();
+
+      })
+    </script>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-38160058-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </body>
+</html>
