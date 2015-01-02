@@ -137,6 +137,4 @@ var avgTaxOptions = {
 
 
 var avgTaxGrowth = document.getElementById("avgtax-growth").getContext("2d");
-
-$('someselector').appear();
 var avgTaxChart = new Chart(avgTaxGrowth).Line(avgTaxData, avgTaxOptions);
